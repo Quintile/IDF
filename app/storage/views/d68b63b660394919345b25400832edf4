@@ -1,0 +1,63 @@
+<?php $__env->startSection('content'); ?>
+<h1>Assign Portions To <?php echo $meal->name; ?></h1>
+<p>This meal is made up of the following portions:</p>
+
+<form method="post">
+	<label>Add Portion</label>
+	<div class="input">
+		<label class="icon"><i class="fa fa-file"></i></label>
+		<select name="meal-portion">
+			<option selected disabled></option>
+			<?php foreach($portions as $portion): ?>
+			<option value="<?php echo $portion->id; ?>"><?php echo $portion->name; ?></option>
+			<?php endforeach; ?>
+			<?php foreach($portionTypes as $type): ?>
+			<option value="random-<?php echo $type->id; ?>">Random <?php echo $type->name; ?></option>
+			<?php endforeach; ?>
+		</select>
+	</div>
+
+	<button class="btn btn-info">Add Portion</button>
+	<a class="btn btn-default" href="<?php echo \URL::route('portions.add'); ?>">Create Portion</a>
+</form>
+<hr />
+
+<div class="row">
+	<div class="col-md-9">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Portion Name</th>
+					<th>Portion Type</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach($meal->portions as $portion): ?>
+				<tr>
+					<td><?php echo $portion->name; ?></td>
+					<td><?php echo $portion->type(); ?></td>
+				</tr>
+				<?php endforeach; ?>
+				<?php foreach($meal->randomPortions() as $portion): ?>
+				<tr>
+					<td>Random</td>
+					<td><?php echo dd($portion->portion_type_id);$portion->type()->name; ?></td>
+				</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-3">
+		<h5>Ingredients</h5>
+		<ul>
+			<?php foreach($meal->portions as $portion): ?>
+			<?php foreach($portion->ingredients as $ingredient): ?>
+			<li><?php echo $ingredient->name; ?></li>
+			<?php endforeach; ?>
+			<?php endforeach; ?>
+		</ul>
+	</div>	
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

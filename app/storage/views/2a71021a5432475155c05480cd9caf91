@@ -1,0 +1,48 @@
+<?php $__env->startSection('content'); ?>
+
+<h1>Add Portion</h1>
+<form method="post">
+	<div class="row">
+		<div class="col-sm-6">
+			<label>Portion Name</label>
+			<div class="input">
+				<label class="icon"><i class="fa fa-pencil"></i></label>
+				<input type="text" name="portion-name" <?php if($portion): ?> value="<?php echo $portion->name; ?>" <?php endif; ?>  />
+			</div>
+		</div>
+		<div class="col-sm-3">
+
+			
+			
+		</div>
+		<div class="col-sm-3">
+			<label>Prep Difficulty</label>
+			<div class="input">
+				<label class="icon"><i class="fa fa-exclamation-circle"></i></label>
+				<input type="text" name="portion-difficulty" <?php if($portion): ?> value="<?php echo $portion->difficulty; ?>" <?php endif; ?> />
+			</div>
+		</div>
+	</div>
+
+	<button class="primary">Save Portion</button>
+
+</form>
+
+<hr />
+
+<h2>Portions</h2>
+<ul>
+	<?php foreach($portions as $p): ?>
+	<li>
+		<a href="<?php echo \URL::route('portions.ingredients', $p->id); ?>">
+			<?php echo $p->name; ?>
+
+		</a>
+		<a href="<?php echo \URL::route('portions.edit', $p->id); ?>">
+			<i class="fa fa-refresh"></i>
+		</a>
+	</li>
+	<?php endforeach; ?>	
+</ul>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

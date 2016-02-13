@@ -1,0 +1,5 @@
+<ul>
+	<li><a href="<?php echo \URL::route('meals'); ?>">Meals</a></li>
+	<li><a href="<?php echo \URL::route('portions.add'); ?>">Portions</a></li>
+	<li><a href="<?php echo \URL::route('meals.plan'); ?>">Plan Meals</a></li>
+</ul>

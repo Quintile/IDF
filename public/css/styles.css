@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Raleway:400,300,500,600,700,800,900);
+
+html,body {
+	font-size: 14px;
+	font-family: "Open Sans", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Raleway", sans-serif;
+	color: #010631;
+}
+
+a {
+	color: #81673F;
+	transition: color 0.3s;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #AE966B;
+	text-decoration: none;
+}
+
+label {
+	padding: 0;
+	border-radius: 0;
+	font-size: 14px;
+	margin-bottom: 6px;
+	line-height: 14px;
+	height: 14px;
+	color: inherit;
+	font-weight: normal;
+	text-align: left;
+	white-space: nowrap;
+	vertical-align: baseline;
+}
+
+.header {
+	height: 64px;
+	background-color: #6E7588;
+	color: #f8f8f8;
+	font-size: 12px;
+	border-bottom: 1px solid #e8e8e8;
+	box-shadow: 1px 0px 3px rgba(0,0,0,0.23);
+	margin-bottom: 20px;
+}
+
+.header a {
+	color: #f8f8f8;
+}
+
+.header a:hover {
+	color:; #FFF;
+}
+
+.input {
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.input:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+
+.input > label.icon {
+	border-right: 1px solid rgba(0,0,0,0.24);
+	left: 3px;
+	color: rgba(0,0,0,0.24);
+	font-size: 17px;
+	height: 37px;
+	line-height: 36px !important;
+	opacity: .6;
+	position: absolute;
+	text-align: center;
+	width: 42px;
+	z-index: 1;
+	transition: color 0.5s ease-in-out;
+}
+
+.input.on > label.icon {
+	color: #365FC9 !important;
+}
+
+.input > input[type=text], .input > select {
+	border-radius: 0;
+	outline: none !important;
+	width: 100%;
+	height: 39px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.846;
+	color: #555;
+	background-color: #FFF;
+	background-image: none;
+	border: 1px solid #ccc;
+	display: block;
+}
+
+.input label.icon ~ input[type=text] {
+	padding-left: 58px;
+}
+
+.input label.icon ~ select {
+	text-indent: 45px;
+	-webkit-appearance: none;
+}
+
+.input button, .input .btn {
+	float: right;
+	z-index: 1;
+	border: 1px solid #ccc;
+	box-shadow: none;
+}
+
+
+.btn.block {
+	display: block;
+}
+
+.btn, button {
+	transition: all .3s;
+	position: relative;
+	border: 1px solid #f8f8f8;
+	margin: 0;
+	outline: none;
+	white-space: nowrap;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+	border-radius: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	padding: 6px 12px;
+	line-height: 1.846;
+	letter-spacing: 0.2px;
+	background-color: #FFF;
+	color: #444;
+}
+
+.btn.full-width {
+	width: 100%;
+	float: none;
+	margin: 0;
+}
+
+.btn:active, .btn:focus, button:active, button:focus {
+	color: inherit !important;
+	background: inherit;
+	outline: none !important;
+}
+
+.btn:hover, button:hover {
+	box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.btn.btn-primary, button.primary {
+	background-color: #428bca;
+	color: #FFF;
+	border-color: #428bca;
+}
+
+.btn.btn-info, button.info {
+	background-color: #365FC9;
+	color: #F8F8F8;
+}
+
+.btn.btn-success, button.success {
+	background-color: #5cb85c;
+	color: #FFF;
+}
+
+.btn.btn-success:hover, button.success:hover {
+	background-color: #47a447;
+}
+
+.btn.btn-info:hover, button.info:hover {
+	background-color: #01A6F4;
+	color: #FFF;
+}
+
+.btn.btn-danger, button.danger {
+	background-color: #e7766f;
+	color: #F8f8f8;
+}
+
+.btn.btn-danger:hover, button.danger:hover {
+	color: #FFF;
+	background-color: #c9302c;
+}
+
+.btn.btn-warning, button.warning {
+	background-color: #ec971f;
+	color: #FFF;
+}
+
+.btn.btn-warning:hover, button.warning:hover {
+	background-color: #d58512;
+	color: #FFF;
+}
+
+.btn.btn-tiny {
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 3px 6px;
+}
+
+table.meal-table small {
+	font-weight: 300;
+	font-size: 10px;
+	color: #777;
+	white-space: nowrap;
+	display: block;
+}
